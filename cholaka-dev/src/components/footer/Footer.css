@@ -70,11 +70,23 @@
   animation-play-state: paused;
 }
 
-/* Responsive scaling */
+/* ===== Responsive adjustments ===== */
+@media (max-width: 1024px) {
+  .tech-marquee {
+    gap: 50px;
+    animation-duration: 20s; /* ⚡ slightly faster */
+  }
+
+  .tech-item img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
 @media (max-width: 768px) {
   .tech-marquee {
     gap: 40px;
-    animation-duration: 35s;
+    animation-duration: 15s; /* ⚡ faster scrolling */
   }
 
   .tech-item img {
@@ -86,11 +98,11 @@
 @media (max-width: 480px) {
   .tech-marquee {
     gap: 30px;
-    animation-duration: 45s;
+    animation-duration: 10s; /* ⚡ fastest for mobile */
   }
 
   .tech-item img {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
   }
 }

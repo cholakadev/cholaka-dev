@@ -4,12 +4,8 @@ import HomePage from "./pages/home/HomePage";
 import AboutPage from "./pages/about/AboutPage";
 import Footer from "./components/footer/Footer";
 import ContactPage from "./pages/contact/ContactPage";
+import ProjectsPage from "./pages/projects/ProjectsPage";
 
-const ProjectsPage = () => (
-  <div style={{ padding: "50px", textAlign: "center" }}>
-    <h2>My Projects</h2>
-  </div>
-);
 const BlogPage = () => (
   <div style={{ padding: "50px", textAlign: "center" }}>
     <h2>My Blog</h2>
