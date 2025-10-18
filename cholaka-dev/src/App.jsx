@@ -2,12 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header";
 import TechOrbit from "./components/techOrbit/TechOrbit";
 import HomePage from "./pages/home/HomePage";
+import AboutPage from "./pages/about/AboutPage";
 
-const AboutPage = () => (
-  <div style={{ padding: "50px", textAlign: "center" }}>
-    <h2>About Me</h2>
-  </div>
-);
 const ProjectsPage = () => (
   <div style={{ padding: "50px", textAlign: "center" }}>
     <h2>My Projects</h2>
