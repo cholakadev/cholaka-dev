@@ -48,9 +48,7 @@ export default function AboutPage() {
       </section>
 
 
-    <section className="card">
       <ExperienceTimeline />
-    </section>
 
       {/* SIDE PROJECTS / INITIATIVES */}
       <section className="card">
