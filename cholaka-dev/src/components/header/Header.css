@@ -1,0 +1,308 @@
+/*
+ * Base Variables and Styles
+ * Using modern CSS variables for easy theming
+ */
+:root {
+    --primary-color: #4f46e5; /* indigo-600 */
+    --primary-hover-color: #4338ca; /* indigo-700 */
+    --text-color: #1f2937; /* gray-800 */
+    --text-color-dark: #111827; /* gray-900 */
+    --background-white: #ffffff;
+    --background-light: #f9fafb; /* gray-50 */
+    --transition-speed: 300ms;
+}
+
+/* ----------------------------------
+ * HEADER STRUCTURE (Desktop & Mobile)
+ * ---------------------------------- */
+
+.header-main {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    /* Frosted glass effect (bg-white/90 backdrop-blur-sm) */
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* For Safari support */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+    max-width: 80rem; /* max-w-7xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem; /* h-16 */
+}
+
+/* ----------------------------------
+ * LOGO
+ * ---------------------------------- */
+
+.logo {
+    font-size: 1.5rem; /* text-2xl */
+    line-height: 2rem;
+    font-weight: 700; /* font-bold */
+    letter-spacing: -0.025em; /* tracking-tight */
+    color: var(--text-color-dark);
+    text-decoration: none; /* Important for Link component */
+}
+
+.profile-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ----------------------------------
+ * DESKTOP NAVIGATION (Default Hidden)
+ * ---------------------------------- */
+
+.nav-links-desktop {
+    display: none; /* Hidden by default (mobile) */
+    /* Handled by media query below */
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+    padding: 0 0 0.5rem 0; /* padding for the border */
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* NavLink adds an 'active' class when it matches the current route */
+.nav-link.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* ----------------------------------
+ * DESKTOP CTA BUTTON (Default Hidden)
+ * ---------------------------------- */
+
+.cta-container-desktop {
+    display: none; /* Hidden by default (mobile) */
+    align-items: center;
+    /* Handled by media query below */
+}
+
+.cta-button {
+    margin-left: 2rem; /* ml-8 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    border: 1px solid transparent;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500;
+    border-radius: 0.375rem; /* rounded-md */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: var(--background-white);
+    background-color: var(--primary-color);
+    text-decoration: none;
+    transition: background-color var(--transition-speed);
+}
+
+.cta-button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+/* ----------------------------------
+ * MOBILE MENU BUTTON (Default Visible)
+ * ---------------------------------- */
+
+.mobile-menu-button-container {
+    display: block; /* Visible by default (mobile) */
+    /* Handled by media query below */
+}
+
+.mobile-menu-button {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    color: var(--text-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color var(--transition-speed);
+}
+
+.mobile-menu-button:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu-button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--background-white), 0 0 0 4px var(--primary-color);
+}
+
+.icon {
+    height: 1.5rem; /* h-6 */
+    width: 1.5rem; /* w-6 */
+}
+
+/* ----------------------------------
+ * MOBILE MENU DROPDOWN
+ * ---------------------------------- */
+
+.mobile-menu-dropdown {
+    background-color: var(--background-white);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    border-top: 1px solid #f3f4f6; /* border-t border-gray-100 */
+}
+
+.mobile-menu-links {
+    padding: 0.5rem 0.5rem 0.75rem 0.5rem; /* px-2 pt-2 pb-3 */
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; /* space-y-1 */
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 0.5rem 0.75rem; /* px-3 py-2 */
+    border-radius: 0.375rem; /* rounded-md */
+    font-size: 1rem; /* text-base */
+    font-weight: 500;
+    color: var(--text-color-dark);
+    text-decoration: none;
+    transition: background-color var(--transition-speed);
+}
+
+.mobile-nav-link:hover {
+    background-color: var(--background-light); /* hover:bg-gray-50 */
+}
+
+.mobile-nav-link.active {
+    background-color: #eef2ff; /* bg-indigo-50 */
+    color: var(--primary-hover-color); /* text-indigo-700 */
+}
+
+.cta-button-mobile {
+    margin-top: 0.5rem; /* mt-2 */
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    color: var(--background-white);
+    background-color: var(--primary-color);
+    text-decoration: none;
+    transition: background-color var(--transition-speed);
+}
+
+.cta-button-mobile:hover {
+    background-color: var(--primary-hover-color);
+}
+
+
+/* ----------------------------------
+ * RESPONSIVENESS (Medium Breakpoint - typically 768px)
+ * This handles the switch from the mobile menu to the desktop nav
+ * ---------------------------------- */
+@media (min-width: 768px) {
+    
+    .header-container {
+        padding-left: 1.5rem; /* sm:px-6 */
+        padding-right: 1.5rem; /* sm:px-6 */
+    }
+
+    /* DESKTOP NAVIGATION: Show full links */
+    .nav-links-desktop {
+        display: flex; /* md:flex */
+        gap: 2rem; /* space-x-8 */
+    }
+
+    /* CTA BUTTON: Show desktop button */
+    .cta-container-desktop {
+        display: flex; /* md:flex */
+    }
+
+    /* MOBILE MENU BUTTON: Hide the hamburger icon */
+    .mobile-menu-button-container {
+        display: none; /* md:hidden */
+    }
+}
+
+/* ----------------------------------
+ * LARGER SCREENS (Large Breakpoint - typically 1024px)
+ * ---------------------------------- */
+@media (min-width: 1024px) {
+    .header-container {
+        padding-left: 2rem; /* lg:px-8 */
+        padding-right: 2rem; /* lg:px-8 */
+    }
+}
+
+/* Profile image */
+.profile-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+/* Zoom overlay */
+.zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease;
+}
+
+.zoomed-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: zoomIn 0.25s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

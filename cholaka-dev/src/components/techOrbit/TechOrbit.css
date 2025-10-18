@@ -1,0 +1,96 @@
+.tech-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #ffffffcc; /* semi-transparent white background */
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  padding: 10px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tech-marquee {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  animation: slideRight 25s linear infinite;
+  will-change: transform;
+}
+
+.tech-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+  opacity: 0.85;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.tech-item img:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* 👇 Scroll direction: Left ➜ Right */
+@keyframes slideRight {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Edge fade effects */
+.tech-marquee-wrapper::before,
+.tech-marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.tech-marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.tech-marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Hover pause */
+.tech-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Responsive scaling */
+@media (max-width: 768px) {
+  .tech-marquee {
+    gap: 40px;
+    animation-duration: 35s;
+  }
+
+  .tech-item img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-marquee {
+    gap: 30px;
+    animation-duration: 45s;
+  }
+
+  .tech-item img {
+    width: 28px;
+    height: 28px;
+  }
+}
