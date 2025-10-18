@@ -2,8 +2,25 @@ import "./AboutPage.css";
 import { Mail, MapPin, Briefcase, Download } from "lucide-react";
 import profileImage from "../../assets/me.jpg";
 import ExperienceTimeline from "../../components/experience/ExperienceTimeline";
+import cvFile from "../../assets/georgi-cholakov-cv.pdf";
 
 export default function AboutPage() {
+
+  function handleDownload() {
+  fetch(cvFile)
+    .then((res) => res.blob())
+    .then((blob) => {
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "Georgi-Cholakov-CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    });
+}
+
   return (
     <div className="about-container">
       {/* HERO / INTRO */}
@@ -17,9 +34,12 @@ export default function AboutPage() {
             putting observability first, and shipping value with pragmatic automation.
           </p>
           <div className="about-hero-actions">
-            <a href="/resume.pdf" className="btn-primary" target="_blank" rel="noreferrer">
+            <button
+              className="btn-primary"
+              onClick={handleDownload}
+            >
               <Download size={18} /> Download Resume
-            </a>
+            </button>
             <a href="/contact" className="btn-outline">
               <Mail size={18} /> Contact
             </a>
