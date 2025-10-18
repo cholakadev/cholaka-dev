@@ -1,4 +1,4 @@
-import "./TechOrbit.css";
+import "./Footer.css";
 import awsLogo from "../../assets/aws.svg";
 import openshiftLogo from "../../assets/openshift.svg";
 
@@ -19,7 +19,7 @@ const technologies = [
   { name: "Kibana", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kibana/kibana-original.svg" },
 ];
 
-export default function TechOrbit() {
+const Footer = () => {
   return (
     <div className="tech-marquee-wrapper">
       <div className="tech-marquee">
@@ -32,3 +32,5 @@ export default function TechOrbit() {
     </div>
   );
 }
+
+export default Footer;

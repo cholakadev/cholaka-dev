@@ -1,8 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header";
-import TechOrbit from "./components/techOrbit/TechOrbit";
 import HomePage from "./pages/home/HomePage";
 import AboutPage from "./pages/about/AboutPage";
+import Footer from "./components/footer/Footer";
+import ContactPage from "./pages/contact/ContactPage";
 
 const ProjectsPage = () => (
   <div style={{ padding: "50px", textAlign: "center" }}>
@@ -12,11 +13,6 @@ const ProjectsPage = () => (
 const BlogPage = () => (
   <div style={{ padding: "50px", textAlign: "center" }}>
     <h2>My Blog</h2>
-  </div>
-);
-const ContactPage = () => (
-  <div style={{ padding: "50px", textAlign: "center" }}>
-    <h2>Get in Touch</h2>
   </div>
 );
 
@@ -34,7 +30,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
-      <TechOrbit /> {/* ✅ Always visible footer ticker */}
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,157 @@
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 20px 120px;
+}
+
+/* ----- Card base (reuses global .card design) ----- */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 28px rgba(21, 40, 82, 0.06);
+  border: 1px solid #e8eef9;
+}
+
+/* ----- Header section ----- */
+.contact-head {
+  display: grid;
+  gap: 28px;
+}
+
+.contact-head-text h1 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  color: #0d2340;
+}
+
+.contact-head-text p {
+  color: #4a5266;
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+/* ----- Contact cards layout ----- */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid #e1e9f8;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff, #fbfcff);
+  color: #1a2740;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(20, 40, 80, 0.05);
+  transition: all 0.18s ease;
+  position: relative;
+}
+
+.contact-card:hover {
+  transform: translateY(-2px);
+  border-color: #cfe0ff;
+  box-shadow: 0 10px 26px rgba(40, 110, 200, 0.12);
+}
+
+/* ----- Icon and text ----- */
+.cc-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: #0c3d7a;
+  transition: color .2s ease;
+}
+.contact-card:hover .cc-icon {
+  color: #005fa3;
+}
+
+.cc-body {
+  display: flex;
+  flex-direction: column;
+}
+.cc-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0c3d7a;
+  margin-bottom: 2px;
+}
+.cc-value {
+  font-size: 0.95rem;
+  color: #444;
+  word-break: break-all;
+}
+
+/* ----- Email copy animation ----- */
+.contact-card.email-card {
+  cursor: pointer;
+}
+
+.contact-card.email-card::after {
+  content: attr(data-copied);
+  position: absolute;
+  top: -12px;
+  right: 14px;
+  background: #0078d7;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.contact-card.email-card.copied::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Flash highlight effect when copied */
+.contact-card.email-card.copied {
+  animation: flashCopy 0.8s ease;
+}
+
+@keyframes flashCopy {
+  0% { background: #0078d7; color: #fff; border-color: #0078d7; }
+  50% { background: #eaf2ff; color: #0c3d7a; }
+  100% { background: linear-gradient(180deg, #ffffff, #fbfcff); }
+}
+
+/* ----- Responsive adjustments ----- */
+@media (max-width: 768px) {
+  .contact-head-text h1 { font-size: 1.7rem; }
+  .contact-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .contact-head-text h1 { font-size: 1.5rem; }
+  .card { padding: 22px; }
+}
+
+/* ----- Dark mode ----- */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: #101725;
+    border-color: #1a2740;
+    box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  }
+  .contact-head-text h1 { color: #e9f1ff; }
+  .contact-head-text p, .cc-value { color: #c7d3f0; }
+  .contact-card {
+    background: linear-gradient(180deg, #0f1421, #0b111c);
+    border-color: #1b2743;
+    color: #e9f1ff;
+  }
+  .contact-card:hover { border-color: #3b63d2; box-shadow: 0 10px 26px rgba(30,80,180,0.25); }
+  .cc-icon, .cc-title { color: #8db3ff; }
+  .contact-card.email-card::after {
+    background: #2b6aff;
+  }
+}

@@ -10,7 +10,7 @@ export default function AboutPage() {
       <section className="about-hero card">
         <img src={profileImage} alt="Georgi Cholakov" className="about-avatar" />
         <div className="about-hero-text">
-          <h1>About <span className="accent">Georgi Cholakov</span></h1>
+          <h1>About <span className="accent">Me</span></h1>
           <p>
             Software Engineering Team Lead focused on scalable cloud architectures,
             clean APIs, and developer experience. I enjoy designing resilient systems,
@@ -47,18 +47,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-
       <ExperienceTimeline />
-
-      {/* SIDE PROJECTS / INITIATIVES */}
-      <section className="card">
-        <h2>Side Projects</h2>
-        <ul className="bulleted">
-          <li><strong>Imoten Signal</strong> — AI-driven real-estate matching platform for BG market.</li>
-          <li><strong>PawPal</strong> — Lost & found pets (Azure Functions, image similarity, push notifications).</li>
-          <li><strong>CAS Observability</strong> — Custom logging & correlation (CompositeTraceId) across services.</li>
-        </ul>
-      </section>
 
       {/* CTA */}
       <section className="about-cta card">
