@@ -1,0 +1,113 @@
+/* ===== FEATURED PROJECTS SECTION ===== */
+.highlights {
+  text-align: center;
+  padding: clamp(50px, 6vw, 90px) 8%;
+  background: #ffffff;
+}
+
+.highlights-title {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 800;
+  color: #0c3d7a;
+  margin-bottom: clamp(30px, 4vw, 50px);
+  text-transform: capitalize;
+}
+
+/* ===== PROJECT CARD GRID ===== */
+.highlight-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2vw, 32px);
+}
+
+/* ===== CARD ===== */
+.highlight-card {
+  position: relative;
+  width: clamp(260px, 28vw, 340px);
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.highlight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== IMAGE HANDLING ===== */
+.highlight-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.highlight-card:hover img {
+  filter: brightness(1);
+}
+
+/* ===== OVERLAY TEXT ===== */
+.highlight-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 16px 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.2) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.highlight-overlay h3 {
+  color: #fff;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ===== MOBILE VIEW ===== */
+@media (max-width: 768px) {
+  .highlight-card {
+    width: 90%;
+    aspect-ratio: 16 / 10;
+  }
+
+  .highlight-overlay {
+    padding: 14px;
+  }
+
+  .highlight-overlay h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .highlights {
+    padding: 40px 5%;
+  }
+
+  .highlight-list {
+    gap: 18px;
+  }
+
+  .highlight-card {
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .highlight-overlay h3 {
+    font-size: 1rem;
+  }
+}

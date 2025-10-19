@@ -1,5 +1,6 @@
 import "./HomePage.css";
 import profileImage from "../../assets/me.jpg";
+import FeaturedProjects from "../../components/projects/FeaturedProjects";
 
 export default function HomePage() {
 
@@ -34,44 +35,7 @@ export default function HomePage() {
       </section>
 
       <section className="projects-section">
-        <h2>Featured Projects</h2>
-        <div className="projects-grid">
-          <div className="project-card">
-            <h3>Imoten Signal</h3>
-            <p>
-              AI-powered real estate platform that connects users with properties
-              matching their search intent using OpenAI-based property analysis.
-            </p>
-            <a href="/projects/imoten-signal">Learn More →</a>
-          </div>
-
-          <div className="project-card">
-            <h3>PawPal</h3>
-            <p>
-              Lost & found pet app using image recognition to match reported
-              animals, built with Azure Functions, Notification Hubs, and MongoDB.
-            </p>
-            <a href="/projects/pawpal">Learn More →</a>
-          </div>
-
-          <div className="project-card">
-            <h3>CAS Platform</h3>
-            <p>
-              Credit Approval System built for DSK Bank — a distributed microservice
-              ecosystem ensuring secure and performant credit card processing.
-            </p>
-            <a href="/projects/cas">Learn More →</a>
-          </div>
-        </div>
-      </section>
-
-      <section className="cta-section">
-        <h2>Let’s Build Something Great</h2>
-        <p>
-          Looking for a consultant, lead engineer, or architectural advice?
-          Reach out and let’s discuss your next project.
-        </p>
-        <a href="/contact" className="btn-primary">Contact Me</a>
+        <FeaturedProjects />
       </section>
     </div>
   );

@@ -1,0 +1,161 @@
+/* ===== PROJECT SECTIONS ===== */
+.project-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(30px, 6vw, 80px);
+  padding: clamp(60px, 8vw, 120px) 6%;
+  background: #fff;
+  border-bottom: 1px solid #eef3fb;
+  scroll-margin-top: 100px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.project-section.reverse {
+  flex-direction: row-reverse;
+  background: #f5f8ff;
+}
+
+/* ===== IMAGE ===== */
+.project-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-image img {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+.project-image img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== CONTENT ===== */
+.project-content {
+  flex: 1 1 420px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.project-content h2 {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  color: #0078d7;
+  margin-bottom: 14px;
+  font-weight: 800;
+}
+
+.project-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: #333;
+}
+
+/* ===== CODE SNIPPET ===== */
+.code-snippet {
+  background: #0d1117;
+  color: #e6edf3;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  margin-bottom: 16px;
+  text-align: left;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== LINK ===== */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0078d7;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.project-link:hover {
+  color: #005aa3;
+  transform: translateY(-2px);
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+  .project-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 6%;
+    gap: 40px;
+  }
+
+  .project-section.reverse {
+    flex-direction: column;
+  }
+
+  .project-image img {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .project-content {
+    text-align: center;
+  }
+
+  .code-snippet {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .project-section {
+    padding: 60px 5%;
+    gap: 24px;
+  }
+
+  .project-image img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .project-content h2 {
+    font-size: 1.4rem;
+  }
+
+.project-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: #333;
+
+  /* ✅ Critical Fixes */
+  text-align: justify;
+  text-justify: inter-word;
+  word-break: break-all;         /* Force breaks inside words */
+  overflow-wrap: break-word;     /* Break long tokens */
+  white-space: normal !important;/* Ensure no nowrap rules survive */
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 6px;
+}
+
+
+  .code-snippet {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    padding: 12px;
+  }
+}
